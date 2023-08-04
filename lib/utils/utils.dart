@@ -14,15 +14,15 @@ class Utils {
   static toastMessage(String message) {
     Fluttertoast.showToast(
         msg: message,
-        backgroundColor: AppColors.lightblackcolor,
+        backgroundColor: AppColors.redcolor,
         gravity: ToastGravity.BOTTOM);
   }
 
   static snakbBar(String title, String message) {
-    Get.snackbar(
-      title,
-      message,
-      backgroundColor: AppColors.lightblackcolor,
-    );
+    Get.snackbar(title, message,
+        snackPosition: SnackPosition.BOTTOM,
+        margin: const EdgeInsets.only(bottom: 20, right: 15, left: 15)
+        // backgroundColor: AppColors.redcolor,
+        );
   }
 }

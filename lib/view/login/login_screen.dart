@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 // import '../../components/GenralException.dart';
 import '../../utils/utils.dart';
-import 'login_screen_controller.dart';
+import '../../view_models/controller/login/login_screen_controller.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -74,9 +74,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     if (value!.isEmpty) {
                       // Utils.toastMessage('email.hinttext'.tr);
                       return "email.hinttext".tr;
-                    } else if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
-                      return "eamil.invalid".tr;
                     }
+                    // else if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
+                    //   return "eamil.invalid".tr;
+                    // }
                     return null;
                   },
                   onFieldSubmitted: (value) {
@@ -153,7 +154,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {}
+                      if (_formKey.currentState!.validate()) {
+                        loginscreencontroller.isLogin();
+                      }
                       // Get.to(() => const GenralExceptionWidgets());
                     },
                     style: ElevatedButton.styleFrom(

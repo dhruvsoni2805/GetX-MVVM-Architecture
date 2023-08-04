@@ -13,6 +13,8 @@ class NetworkApiServices extends BaseApiServices {
     try {
       final response =
           await http.get(Uri.parse(url)).timeout(Duration(seconds: 20));
+      print(response.body);
+      print('the status code is : ${response.statusCode}');
       responseJson = returnResponse(response);
     } on SocketException {
       throw InternetException('');
@@ -23,22 +25,30 @@ class NetworkApiServices extends BaseApiServices {
     return responseJson;
   }
 
+//dummy
   Future<dynamic> postApi(var data, String url) async {
+    // Future<dynamic> postApi(var data, String url) async {
     debugPrint("The Url is : ${url.toString()}");
     debugPrint("The Data is : ${data.toString()}");
 
     dynamic responseJson;
     try {
       final response = await http
-          .post(Uri.parse(url), body: jsonEncode(data))
+          .post(Uri.parse(url), body: data
+              // body: JsonDecoder(data),
+              )
           .timeout(const Duration(seconds: 20));
+      print(response.body);
+      print('the status code is : ${response.statusCode}');
       responseJson = returnResponse(response);
     } on SocketException {
       throw InternetException('');
     } on RequestTimeOutException {
       throw RequestTimeOutException('');
+    } catch (e) {
+      print(e.toString());
     }
-    // catch (e) {}
+    print("The Response is : $responseJson");
     return responseJson;
   }
 
@@ -49,7 +59,8 @@ class NetworkApiServices extends BaseApiServices {
         return responseJson;
 
       case 400:
-        throw InvalidUrlException;
+        dynamic responseJson = jsonDecode(response.body);
+        return responseJson;
 
       default:
         throw FetchDataException(response.statusCode.toString());
