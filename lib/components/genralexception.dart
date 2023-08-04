@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_mvvm_pattern/components/internetExceptionWidget.dart';
 import 'package:getx_mvvm_pattern/resources/colors/color.dart';
 
 class GenralExceptionWidgets extends StatefulWidget {
@@ -21,21 +22,27 @@ class _GenralExceptionWidgetsState extends State<GenralExceptionWidgets> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Icon(
-              Icons.cloud_off,
-              size: 200,
+              Icons.error_outline,
+              size: 150,
               color: AppColors.redcolor,
             ),
-            const Text(
-              "No Data Found ",
-              style: TextStyle(color: AppColors.redcolor, fontSize: 50),
+            SizedBox(
+              height: Get.height * 0.02,
+            ),
+            Text(
+              "genralexception".tr,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             SizedBox(
-              height: Get.height * 0.05,
+              height: Get.height * 0.02,
             ),
             OutlinedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(() => const InternetExceptionWidgets());
+                },
                 style: OutlinedButton.styleFrom(
-                    fixedSize: Size(Get.width * 0.7, Get.height * 0.07)),
+                    fixedSize: Size(Get.width * 0.5, Get.height * 0.05)),
                 child: Text(
                   "Retry",
                   style: Theme.of(context).textTheme.titleLarge,
