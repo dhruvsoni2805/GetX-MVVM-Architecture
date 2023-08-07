@@ -17,6 +17,12 @@ class Languages extends Translations {
           "password.example": "* * * * * *",
           "password.invalid": "Your password is too Short.",
 
+          //User List
+          "userlist.apptitle": "User List",
+          "id": "Id",
+          "name": "Name",
+          "email": "Email",
+
           //Internet Exception
           "nointernetexception":
               "We're Unable to Load Result.\n Please Check Your Internet Connection",

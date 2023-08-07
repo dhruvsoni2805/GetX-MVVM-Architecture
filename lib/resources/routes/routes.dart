@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:getx_mvvm_pattern/resources/routes/routes_name.dart';
-import 'package:getx_mvvm_pattern/view/home/home_screen.dart';
+import 'package:getx_mvvm_pattern/view/home/user_list_screen.dart';
 
 import '../../view/login/login_screen.dart';
 import '../../view/splash_screen/splashscreen.dart';
@@ -19,9 +19,9 @@ class AppRoutes {
           transition: Transition.zoom,
         ),
         GetPage(
-          name: RoutesName.homeScreen,
-          page: () => const HomeScreen(),
-          transitionDuration: const Duration(milliseconds: 500),
+          name: RoutesName.homescreen,
+          page: () => const UserListScreen(),
+          transitionDuration: const Duration(milliseconds: 300),
           transition: Transition.zoom,
         ),
       ];

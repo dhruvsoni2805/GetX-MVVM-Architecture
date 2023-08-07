@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_mvvm_pattern/models/login_model/user_model.dart';
 import 'package:getx_mvvm_pattern/utils/utils.dart';
-import 'package:getx_mvvm_pattern/view_models/controller/user_preference/user_preference_controller.dart';
 
 import '../../../repository/login_repository.dart';
 import '../../../resources/routes/routes_name.dart';
+import '../user_shared_pref_view_model.dart';
 
 class LoginScreenController extends GetxController {
-  UserPreference userprefernce = UserPreference();
-
+  UserPref userpref = UserPref();
   final emailcontroller = TextEditingController().obs;
   final passswordcontroller = TextEditingController().obs;
 
@@ -32,11 +31,14 @@ class LoginScreenController extends GetxController {
       if (value['error'] == 400) {
         Utils.snakbBar("400 Error ", value.toString());
       } else {
-        userprefernce.saveUser(UserModel.fromJson(value)).then((value) {
-          Get.toNamed(RoutesName.homeScreen);
-        }).onError((error, stackTrace) {});
+        userpref
+            .addUser(UserModel.fromJson(value))
+            .then(
+              (value) => Get.toNamed(RoutesName.homescreen),
+            )
+            .onError((error, stackTrace) => null);
+        Utils.snakbBar("Congrtulation", value.toString());
       }
-      Utils.snakbBar("Congrtulation", value.toString());
     }).onError((error, stackTrace) {
       print(error.toString());
       Utils.snakbBar('Error', error.toString());

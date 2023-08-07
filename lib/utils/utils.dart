@@ -15,14 +15,19 @@ class Utils {
     Fluttertoast.showToast(
         msg: message,
         backgroundColor: AppColors.redcolor,
+        toastLength: Toast.LENGTH_LONG,
+        timeInSecForIosWeb: 1,
+        textColor: Colors.white,
+        fontSize: 16.0,
         gravity: ToastGravity.BOTTOM);
   }
 
   static snakbBar(String title, String message) {
     Get.snackbar(title, message,
         snackPosition: SnackPosition.BOTTOM,
-        margin: const EdgeInsets.only(bottom: 20, right: 15, left: 15)
-        // backgroundColor: AppColors.redcolor,
-        );
+        margin: const EdgeInsets.only(bottom: 20, right: 15, left: 15),
+        backgroundColor: Colors.green);
   }
+
+// static dialogBox() {}
 }

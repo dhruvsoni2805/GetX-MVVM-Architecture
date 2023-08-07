@@ -1,22 +1,23 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_mvvm_pattern/resources/routes/routes_name.dart';
-
-import '../controller/user_preference/user_preference_controller.dart';
+import 'package:getx_mvvm_pattern/view_models/controller/user_shared_pref_view_model.dart';
 
 class SplashScreenServices {
-  UserPreference userpreference = UserPreference();
+  UserPref _userPref = UserPref();
 
   void isLogIn() {
-    userpreference.getUser().then((value) {
-      print(value.token);
+    _userPref.getUser().then((value) {
+      //   print(value.token);
       if (value.token!.isEmpty || value.token.toString() == 'null') {
         Timer(const Duration(seconds: 3),
             () => Get.toNamed(RoutesName.loginScreen));
       } else {
+        debugPrint("Home Screen");
         Timer(const Duration(seconds: 3),
-            () => Get.toNamed(RoutesName.homeScreen));
+            () => Get.toNamed(RoutesName.homescreen));
       }
     });
   }
