@@ -11,12 +11,14 @@ class UserPref {
 
   Future<UserModel> getUser() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    String? tokenIs = pref.getString('token');
-    return UserModel(token: tokenIs);
+    String? tokenIS = await pref.getString("token");
+    print("token is : $tokenIS");
+    return UserModel(token: pref.getString('token'));
   }
 
   Future<bool> removeUser() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
+    print(pref.getString("token"));
     pref.clear();
     return true;
   }
