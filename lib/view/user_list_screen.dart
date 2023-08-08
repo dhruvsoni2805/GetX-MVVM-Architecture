@@ -147,9 +147,20 @@ class _UserListScreenState extends State<UserListScreen> {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("id".tr),
                             Text(
-                                " : ${userListController.userlist.value.data![index].id.toString()}"),
+                              "id".tr,
+                              style: const TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Text(
+                              " : ${userListController.userlist.value.data![index].id.toString()}",
+                              style: const TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ],
                         ),
                         const Divider(
@@ -160,9 +171,20 @@ class _UserListScreenState extends State<UserListScreen> {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("name".tr),
                             Text(
-                                " : ${userListController.userlist.value.data![index].firstName}  ${userListController.userlist.value.data![index].lastName}"),
+                              "name".tr,
+                              style: const TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Text(
+                              " : ${userListController.userlist.value.data![index].firstName}  ${userListController.userlist.value.data![index].lastName}",
+                              style: const TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ],
                         ),
                         const Divider(
@@ -173,7 +195,13 @@ class _UserListScreenState extends State<UserListScreen> {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("email".tr),
+                            Text(
+                              "email".tr,
+                              style: const TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
                             SizedBox(
                               width: 180,
                               child: Tooltip(
@@ -185,6 +213,10 @@ class _UserListScreenState extends State<UserListScreen> {
                                   maxLines: 1,
                                   softWrap: false,
                                   overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w400,
+                                  ),
                                 ),
                               ),
                             ),

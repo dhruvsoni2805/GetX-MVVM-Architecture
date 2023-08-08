@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_mvvm_pattern/models/login_model/user_model.dart';
+import 'package:getx_mvvm_pattern/models/user_model.dart';
 import 'package:getx_mvvm_pattern/utils/utils.dart';
 
-import '../../../repository/login_repository.dart';
-import '../../../resources/routes/routes_name.dart';
-import '../user_shared_pref_view_model.dart';
+import '../../repository/login_repository.dart';
+import '../../resources/routes/routes_name.dart';
+import 'user_shared_pref_view_model.dart';
 
 class LoginScreenController extends GetxController {
   UserPref userpref = UserPref();

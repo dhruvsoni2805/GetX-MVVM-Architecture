@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // import '../../components/GenralException.dart';
-import '../../utils/utils.dart';
-import '../../view_models/controller/login/login_screen_controller.dart';
+import '../utils/utils.dart';
+import '../view_models/controller/login_screen_controller.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

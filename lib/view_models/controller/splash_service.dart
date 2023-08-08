@@ -10,7 +10,7 @@ class SplashScreenServices {
 
   void isLogIn() {
     _userPref.getUser().then((value) {
-      print("the splash screen service token is : ${value.token}");
+      debugPrint("the splash screen service token is : ${value.token}");
       if (value.token == null) {
         Timer(const Duration(seconds: 3),
             () => Get.toNamed(RoutesName.loginScreen));

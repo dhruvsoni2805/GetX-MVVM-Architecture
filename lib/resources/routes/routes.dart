@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 import 'package:getx_mvvm_pattern/resources/routes/routes_name.dart';
-import 'package:getx_mvvm_pattern/view/home/user_list_screen.dart';
+import 'package:getx_mvvm_pattern/view/user_list_screen.dart';
 
-import '../../view/login/login_screen.dart';
-import '../../view/splash_screen/splashscreen.dart';
+import '../../view/login_screen.dart';
+import '../../view/splashscreen.dart';
 
 class AppRoutes {
   static appRoutes() => [
