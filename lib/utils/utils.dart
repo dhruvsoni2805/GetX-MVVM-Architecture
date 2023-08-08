@@ -11,7 +11,7 @@ class Utils {
     FocusScope.of(context).requestFocus(nextFocus);
   }
 
-  static toastMessage(String message) {
+  static void toastMessage(String message) {
     Fluttertoast.showToast(
         msg: message,
         backgroundColor: AppColors.redcolor,
@@ -22,12 +22,10 @@ class Utils {
         gravity: ToastGravity.BOTTOM);
   }
 
-  static snakbBar(String title, String message) {
+  static void snakbBar(String title, String message) {
     Get.snackbar(title, message,
         snackPosition: SnackPosition.BOTTOM,
         margin: const EdgeInsets.only(bottom: 20, right: 15, left: 15),
-        backgroundColor: Colors.green);
+        backgroundColor: Colors.green[200]);
   }
-
-// static dialogBox() {}
 }

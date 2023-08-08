@@ -12,9 +12,9 @@ class NetworkApiServices extends BaseApiServices {
     dynamic responseJson;
     try {
       final response =
-          await http.get(Uri.parse(url)).timeout(Duration(seconds: 20));
-      print(response.body);
-      print('the status code is : ${response.statusCode}');
+          await http.get(Uri.parse(url)).timeout(const Duration(seconds: 20));
+      debugPrint(response.body);
+      debugPrint('the status code is : ${response.statusCode}');
       responseJson = returnResponse(response);
     } on SocketException {
       throw InternetException('');
@@ -25,7 +25,7 @@ class NetworkApiServices extends BaseApiServices {
     return responseJson;
   }
 
-//dummy
+  @override
   Future<dynamic> postApi(var data, String url) async {
     // Future<dynamic> postApi(var data, String url) async {
     debugPrint("The Url is : ${url.toString()}");
@@ -38,17 +38,17 @@ class NetworkApiServices extends BaseApiServices {
               // body: JsonDecoder(data),
               )
           .timeout(const Duration(seconds: 20));
-      print(response.body);
-      print('the status code is : ${response.statusCode}');
+      debugPrint(response.body);
+      debugPrint('the status code is : ${response.statusCode}');
       responseJson = returnResponse(response);
     } on SocketException {
       throw InternetException('');
     } on RequestTimeOutException {
       throw RequestTimeOutException('');
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
     }
-    print("The Response is : $responseJson");
+    debugPrint("The Response is : $responseJson");
     return responseJson;
   }
 

@@ -23,6 +23,12 @@ class Languages extends Translations {
           "name": "Name",
           "email": "Email",
 
+          //dailogBox
+          "exit": "Exit App",
+          "content": "Do You Really Want To Exit App",
+          "yes": "Yes",
+          "no": "No",
+
           //Internet Exception
           "nointernetexception":
               "We're Unable to Load Result.\n Please Check Your Internet Connection",

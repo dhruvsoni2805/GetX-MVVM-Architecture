@@ -28,19 +28,18 @@ class LoginScreenController extends GetxController {
       'password': passswordcontroller.value.text
     };
     _api.LoginApi(data).then((value) {
-      if (value['error'] == 400) {
-        Utils.snakbBar("400 Error ", value.toString());
+      if (value['error'] == 'user not found') {
+        Utils.snakbBar("login", "Invalid User");
       } else {
-        userpref
-            .addUser(UserModel.fromJson(value))
-            .then(
-              (value) => Get.toNamed(RoutesName.homescreen),
-            )
-            .onError((error, stackTrace) => null);
+        userpref.addUser(UserModel.fromJson(value)).then((value) {
+          Get.toNamed(RoutesName.homescreen);
+        }).onError((error, stackTrace) {
+          Utils.snakbBar('Error', error.toString());
+        });
         Utils.snakbBar("Congrtulation", value.toString());
       }
     }).onError((error, stackTrace) {
-      print(error.toString());
+      debugPrint(error.toString());
       Utils.snakbBar('Error', error.toString());
     });
   }
