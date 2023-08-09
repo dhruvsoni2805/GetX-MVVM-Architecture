@@ -12,6 +12,8 @@ class UserListController extends GetxController {
   final userlist = UserListModel().obs;
   final userlistfirst = UserListModel().obs;
 
+  RxBool iconActive = true.obs;
+
   void setRxRequestStatus(Status statusvalue) =>
       rxRequestStatus.value = statusvalue;
 
@@ -25,5 +27,9 @@ class UserListController extends GetxController {
       setRxRequestStatus(Status.ERROR);
       Utils.toastMessage(error.toString());
     });
+  }
+
+  void changeIconAnimation() {
+    iconActive.value = !iconActive.value;
   }
 }

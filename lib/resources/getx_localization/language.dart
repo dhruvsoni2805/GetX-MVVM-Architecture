@@ -23,6 +23,13 @@ class Languages extends Translations {
           "name": "Name",
           "email": "Email",
 
+          //User list Drawer
+          'themelight': "Light Theme",
+          'themedart': "Dark Theme",
+          'ownername': "Dhruv Soni",
+          'ownermail': "dhruvsoni285@gmail.com",
+          'usermaterial': "User Material",
+
           //dailogBox
           "exit": "Exit App",
           "content": "Do You Really Want To Exit App",

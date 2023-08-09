@@ -3,4 +3,5 @@ class ApiUrl {
   static const String login = "api/login";
   static const String userlistfirst = "api/users";
   static const String userlist = "api/users?page=2/";
+  static const String usermaterial = "api/unknown";
 }
