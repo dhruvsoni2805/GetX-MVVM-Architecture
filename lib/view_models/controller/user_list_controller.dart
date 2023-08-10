@@ -10,7 +10,6 @@ class UserListController extends GetxController {
 
   final rxRequestStatus = Status.LOADING.obs;
   final userlist = UserListModel().obs;
-  final userlistfirst = UserListModel().obs;
 
   RxBool iconActive = true.obs;
 

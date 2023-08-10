@@ -1,4 +1,4 @@
-class UserListModel {
+class UserMaterialModel {
   int? page;
   int? perPage;
   int? total;
@@ -6,7 +6,7 @@ class UserListModel {
   List<Data>? data;
   Support? support;
 
-  UserListModel(
+  UserMaterialModel(
       {this.page,
       this.perPage,
       this.total,
@@ -14,7 +14,7 @@ class UserListModel {
       this.data,
       this.support});
 
-  UserListModel.fromJson(Map<String, dynamic> json) {
+  UserMaterialModel.fromJson(Map<String, dynamic> json) {
     page = json['page'];
     perPage = json['per_page'];
     total = json['total'];
@@ -47,28 +47,28 @@ class UserListModel {
 
 class Data {
   int? id;
-  String? email;
-  String? firstName;
-  String? lastName;
-  String? avatar;
+  String? name;
+  int? year;
+  String? color;
+  String? pantoneValue;
 
-  Data({this.id, this.email, this.firstName, this.lastName, this.avatar});
+  Data({this.id, this.name, this.year, this.color, this.pantoneValue});
 
   Data.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    email = json['email'];
-    firstName = json['first_name'];
-    lastName = json['last_name'];
-    avatar = json['avatar'];
+    name = json['name'];
+    year = json['year'];
+    color = json['color'];
+    pantoneValue = json['pantone_value'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
-    data['email'] = email;
-    data['first_name'] = firstName;
-    data['last_name'] = lastName;
-    data['avatar'] = avatar;
+    data['name'] = name;
+    data['year'] = year;
+    data['color'] = color;
+    data['pantone_value'] = pantoneValue;
     return data;
   }
 }

@@ -30,6 +30,11 @@ class Languages extends Translations {
           'ownermail': "dhruvsoni285@gmail.com",
           'usermaterial': "User Material",
 
+          //user material list
+          'year': "Year",
+          'color': "Colour",
+          'pantone_value': "Pantone Value",
+
           //dailogBox
           "exit": "Exit App",
           "content": "Do You Really Want To Exit App",

@@ -6,7 +6,7 @@ import 'package:getx_mvvm_pattern/resources/routes/routes_name.dart';
 import 'package:getx_mvvm_pattern/view_models/controller/user_shared_pref_view_model.dart';
 
 class SplashScreenServices {
-  UserPref _userPref = UserPref();
+  final UserPref _userPref = UserPref();
 
   void isLogIn() {
     _userPref.getUser().then((value) {

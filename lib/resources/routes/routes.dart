@@ -28,7 +28,7 @@ class AppRoutes {
         GetPage(
           name: RoutesName.usermaterial,
           page: () => const UserMaterialScreen(),
-          transitionDuration: const Duration(milliseconds: 300),
+          // transitionDuration: const Duration(milliseconds: 300),
           transition: Transition.zoom,
         ),
       ];

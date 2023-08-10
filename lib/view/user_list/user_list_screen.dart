@@ -19,20 +19,16 @@ class _UserListScreenState extends State<UserListScreen>
   final userListController = Get.put(UserListController());
   UserPref userpref = UserPref();
 
-  late AnimationController _animationcontroller;
   bool isActive = true;
 
   @override
   void initState() {
     super.initState();
-    _animationcontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
     userListController.userListApi();
   }
 
   @override
   Widget build(BuildContext context) {
-    final scaffoldKey = GlobalKey<ScaffoldState>();
     return WillPopScope(
       onWillPop: () async {
         final shouldPop = await showDialog<bool>(
@@ -106,8 +102,8 @@ class _UserListScreenState extends State<UserListScreen>
                 icon: const Icon(Icons.logout))
           ],
         ),
-        body: UserListappBar(),
-        drawer: USerListDrawerScreen(),
+        body: const UserListappBar(),
+        drawer: const USerListDrawerScreen(),
       ),
     );
   }

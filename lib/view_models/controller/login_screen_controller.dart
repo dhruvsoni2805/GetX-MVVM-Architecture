@@ -27,7 +27,7 @@ class LoginScreenController extends GetxController {
       'email': emailcontroller.value.text,
       'password': passswordcontroller.value.text
     };
-    _api.LoginApi(data).then((value) {
+    _api.loginApi(data).then((value) {
       if (value['error'] == 'user not found') {
         Utils.snakbBar("login", "Invalid User");
       } else {
